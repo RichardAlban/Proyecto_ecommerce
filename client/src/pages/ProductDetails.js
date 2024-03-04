@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import Layout from "./../components/Layout/Layout";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
+import { useCart } from "../context/cart";
 import "../styles/ProductDetailsStyles.css";
 
 const ProductDetails = () => {
@@ -9,6 +11,7 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const [cart, setCart] = useCart();
 
   //initalp details
   useEffect(() => {
@@ -62,7 +65,8 @@ const ProductDetails = () => {
             })}
           </h6>
           <h6>Categoria : {product?.category?.name}</h6>
-          <button class="btn btn-secondary ms-1">AÑADIR AL CARRITO</button>
+          {/* <button class="btn btn-secondary ms-1">AÑADIR AL CARRITO</button> */}
+
         </div>
       </div>
       <hr />

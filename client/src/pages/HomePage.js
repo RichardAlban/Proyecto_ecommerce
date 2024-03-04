@@ -63,7 +63,7 @@ const HomePage = () => {
     if (page === 1) return;
     loadMore();
   }, [page]);
-  //load more
+  //cargar mas
   const loadMore = async () => {
     try {
       setLoading(true);
@@ -76,7 +76,7 @@ const HomePage = () => {
     }
   };
 
-  // filter by cat
+  // filtro por categoria
   const handleFilter = (value, id) => {
     let all = [...checked];
     if (value) {
@@ -94,7 +94,7 @@ const HomePage = () => {
     if (checked.length || radio.length) filterProduct();
   }, [checked, radio]);
 
-  //get filterd product
+  //filtro por producto
   const filterProduct = async () => {
     try {
       const { data } = await axios.post("/api/v1/product/product-filters", {
