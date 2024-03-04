@@ -12,7 +12,7 @@ npm i
 Lo cual nos instala las dependencias por parte del frontend.
 En caso de que nos aparezca un error, estas son las dependencias instaladas por parte del frontend.
 
-(Imagenes de la ejecucion del archivo/Imagen de WhatsApp 2024-03-04 a las 12.04.20_3c762ba5.jpg)
+![Dependencias front](img_ejecution/front.jpg)
 
 ```bash
 npm i "@testing-library/jest-dom@^5.17.0" \
@@ -45,7 +45,7 @@ npm i
 Lo cual nos instala las dependencias por parte del backend.
 En caso de que nos aparezca un error, estas son las dependencias instaladas por parte del backend.
 
-(Imagenes de la ejecucion del archivo/Imagen de WhatsApp 2024-03-04 a las 12.04.20_d744dd75.jpg)
+![Dependencias back](img_ejecution/back.jpg)
 
 ```bash
 npm i "antd@^5.14.0" \
