@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
         token: parseData.token,
       });
     }
-    //eslint-deshabilitar-siguiente-línea
+    //eslint-disable-next-line
   }, []);
   return (
     <AuthContext.Provider value={[auth, setAuth]}>

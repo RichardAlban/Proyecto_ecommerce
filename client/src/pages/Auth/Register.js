@@ -33,11 +33,9 @@ const Register = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error("Algo salio mal");
+      toast.error("Algo Salio mal");
     }
   };
-
-
   return (
     <Layout title="Register - Ecommerce App">
         <div className="form-container ">

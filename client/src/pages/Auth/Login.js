@@ -35,7 +35,7 @@ const Login = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error("Algo salio mal");
+      toast.error("Usuario no encontrado");
     }
   };
   return (

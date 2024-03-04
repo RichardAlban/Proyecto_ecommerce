@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400&display=swap");
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,9 +9,9 @@
 /* font-family: 'Poppins', sans-serif; */
 /* font-family: 'Playfair Display', serif; */
 
-/* navbar css */
-.navbar{
-  font-family: 'Poppins', sans-serif;
+/* //navbar css */
+.navbar {
+  font-family: "Poppins", sans-serif;
   font-size: 17px;
   line-height: 26px;
   text-transform: uppercase;
@@ -20,77 +20,89 @@
   border-bottom: solid gray !important;
 }
 
-.nav-link{
-  font-weight: 300 !important; 
+.nav-link {
+  font-weight: 300 !important;
 }
 
-.active{
-  border-bottom: 1px solid black;
+.active {
+  border-bottom: 2px solid black;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-weight: 700;
   font-family: "roboto", sans-serif;
   letter-spacing: 3px;
 }
 
-.footer{
+.search-form {
+  margin-right: 10px;
+  margin-top: 4px;
+}
+.search-form input {
+  border: none;
+  border-radius: 0;
+}
+.search-form button {
+  background-color: #000000;
+  border-radius: 0;
+  color: white;
+}
+
+/* =============================
+==========footer============= */
+
+.footer {
   color: white;
   padding: 25px;
-  background: #000000;
+  background: #000000; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to right,
     #434343,
     #000000
-  );
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #434343, #000000);
 }
 
-.footer a{
+.footer a {
   text-decoration: none;
   color: white;
   padding: 10px;
 }
 
-.footer a:hover{
-  color: white;
+.footer a:hover {
+  color: #ffefba;
   border-bottom: 1px solid #ffefba;
 }
-
-/* Page not founf CSS */
-
-.pnf{
-  display: 	flex;
+/* =================================
+======== page not found css ======= */
+.pnf {
+  display: flex;
   min-height: 65vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.pnf-title{
+.pnf-title {
   font-size: 100px;
   font-weight: 700;
 }
 
-.pnf-heading{
+.pnf-heading {
   font-weight: normal;
 }
 
-.pnf-btn{
+.pnf-btn {
   color: black;
   border: 1px solid black;
   text-decoration: none;
   padding: 10px;
-  margin-top: 10px; 
-  transition: background-color 0.3s, color 0.3s;
-
-      /* Estilos al pasar el ratón */
-      &:hover {
-        background-color: black;
-        color: white;
-      }
+  margin-top: 10px;
 }
-
+.pnf-btn:hover {
+  background-color: black;
+  color: white;
+}
 /* ========================================= */
 /* =========contact us ========= */
 .contactus {
@@ -102,13 +114,31 @@
   justify-content: center;
 }
 
-/* ========================================= */
-/* =========register page ========= */
+/* ==================== */
+.product-link {
+  text-decoration: none !important;
+  color: black !important;
+}
 
-.register{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70vh;
-  flex-direction: column;
+.cat-btn {
+  padding: 40px 0px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.cat-btn:hover {
+  background-color: #434343;
+  color: white;
+}
+/* ================
+====dashboard
+=================== */
+
+.dashboard {
+  margin-top: 100px !important;
+}
+
+.dashboard-menu h4 {
+  background-color: #434343 !important;
+  color: white;
+  padding: 20px 0px;
 }
