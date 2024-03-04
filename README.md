@@ -14,6 +14,8 @@ En caso de que nos aparezca un error, estas son las dependencias instaladas por 
 
 ![Dependencias front](img_ejecution/front.jpg)
 
+Comando para instalar todas las dependencias por parte del frontend.
+
 ```bash
 npm i "@testing-library/jest-dom@^5.17.0" \
       "@testing-library/react@^13.4.0" \
@@ -46,6 +48,8 @@ Lo cual nos instala las dependencias por parte del backend.
 En caso de que nos aparezca un error, estas son las dependencias instaladas por parte del backend.
 
 ![Dependencias back](img_ejecution/back.jpg)
+
+Comando para instalar todas las dependencias por parte del backend.
 
 ```bash
 npm i "antd@^5.14.0" \
