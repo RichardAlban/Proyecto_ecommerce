@@ -17,6 +17,17 @@ const CartPage = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // Agrupar productos por su ID y contar cantidad
+  const groupedCart = cart.reduce((acc, item) => {
+    const foundItem = acc.find((i) => i._id === item._id);
+    if (foundItem) {
+      foundItem.quantity += 1;
+    } else {
+      acc.push({ ...item, quantity: 1 });
+    }
+    return acc;
+  }, []);
+
   //total price
   const totalPrice = () => {
     try {
@@ -32,7 +43,8 @@ const CartPage = () => {
       console.log(error);
     }
   };
-  //detele item
+
+  //delete item
   const removeCartItem = (pid) => {
     try {
       let myCart = [...cart];
@@ -77,9 +89,10 @@ const CartPage = () => {
       setLoading(false);
     }
   };
+
   return (
     <Layout>
-      <div className=" cart-page">
+      <div className="cart-page">
         <div className="row">
           <div className="col-md-12">
             <h1 className="text-center bg-light p-2 mb-1">
@@ -96,11 +109,11 @@ const CartPage = () => {
             </h1>
           </div>
         </div>
-        <div className="container ">
-          <div className="row ">
-            <div className="col-md-7  p-0 m-0">
-              {cart?.map((p) => (
-                <div className="row card flex-row" key={p._id}>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-7 p-0 m-0">
+              {groupedCart.map((p) => (
+                <div className="row card flex-row" style={{ marginRight: '20px', marginTop: '20px' }} key={p._id}>
                   <div className="col-md-4">
                     <img
                       src={`/api/v1/product/product-photo/${p._id}`}
@@ -113,7 +126,8 @@ const CartPage = () => {
                   <div className="col-md-4">
                     <p>{p.name}</p>
                     <p>{p.description.substring(0, 30)}</p>
-                    <p>Price : {p.price}</p>
+                    <p>Price: {p.price}</p>
+                    <p>Cantidad: {p.quantity}</p> {/* Mostrar cantidad */}
                   </div>
                   <div className="col-md-4 cart-remove-btn">
                     <button
@@ -126,15 +140,15 @@ const CartPage = () => {
                 </div>
               ))}
             </div>
-            <div className="col-md-5 cart-summary ">
-              <h2>Resumen de la compra</h2>
-              <p>Total | Verificar | Pago</p>
+            <div className="col-md-5 cart-summary" style={{ backgroundColor: 'rgba(128, 128, 128, 0.5)', borderRadius: '15px', padding: '20px', marginTop: '20px' }}>
+              <h2 style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)', padding: '10px', color: 'white' }}>Resumen de la compra</h2>
+              <p className="alb">Total | Verificar | Pago</p>
               <hr />
-              <h4>Total : {totalPrice()} </h4>
+              <h4 className="alb">Total: {totalPrice()} </h4>
               {auth?.user?.address ? (
                 <>
                   <div className="mb-3">
-                    <h4>Direccion actual</h4>
+                    <h4>Dirección actual</h4>
                     <h5>{auth?.user?.address}</h5>
                     <button
                       className="btn btn-outline-warning"
@@ -155,7 +169,7 @@ const CartPage = () => {
                     </button>
                   ) : (
                     <button
-                      className="btn btn-outline-warning"
+                      className="btn btn-primary"
                       onClick={() =>
                         navigate("/login", {
                           state: "/cart",
@@ -181,7 +195,6 @@ const CartPage = () => {
                       }}
                       onInstance={(instance) => setInstance(instance)}
                     />
-
                     <button
                       className="btn btn-primary"
                       onClick={handlePayment}

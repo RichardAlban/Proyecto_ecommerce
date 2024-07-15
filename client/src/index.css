@@ -20,9 +20,24 @@
   border-bottom: solid gray !important;
 }
 
+.cart-item {
+  margin-top: 10px;
+  margin-right: 10px; /* Adjust the value for desired spacing */
+}
+
+.navbar-collapse {
+  padding-bottom: 10px; /* Adjust the value (in pixels) for desired spacing */
+}
+
 .nav-link {
   font-weight: 300 !important;
 }
+
+.nav-link,
+.navbar-brand {
+  color: white !important;
+}
+
 
 .active {
   border-bottom: 2px solid black;
@@ -45,6 +60,10 @@
 .search-form button {
   background-color: #000000;
   border-radius: 0;
+  color: white;
+}
+
+.alb{
   color: white;
 }
 

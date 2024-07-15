@@ -6,6 +6,8 @@ import SearchInput from "../Form/SearchInput";
 import useCategory from "../../hooks/useCategory";
 import { useCart } from "../../context/cart";
 import { Badge } from "antd";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
     const [auth, setAuth] = useAuth();
@@ -23,7 +25,7 @@ const Header = () => {
     };
     return (
         <>
-          <nav className="navbar navbar-expand-lg bg-body-tertiary">
+          <nav className="navbar navbar-expand-lg bg-dark">
             <div className="container-fluid">
               <button
                 className="navbar-toggler"
@@ -36,11 +38,11 @@ const Header = () => {
               >
                 <span className="navbar-toggler-icon" />
               </button>
-              <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <div className="collapse navbar-collapse " id="navbarTogglerDemo01">
                 <Link to="/" className="navbar-brand">
-                🛒TRITECH INNOVATIONS
+                🛒PLEX BRAIN
                 </Link>
-                <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul className="navbar-nav ms-auto mb-2 mb-lg-0 cart-item" >
                   <SearchInput />
                   <li className="nav-item">
                     <NavLink to="/" className="nav-link ">
@@ -49,9 +51,9 @@ const Header = () => {
                   </li>
 
 
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown ">
                 <Link
-                  className="nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle "
                   to={"/categories"}
                   data-bs-toggle="dropdown"
                 >
@@ -128,7 +130,7 @@ const Header = () => {
                   <li className="nav-item">
                     <Badge count={cart?.length} showZero>
                       <NavLink to="/cart" className="nav-link">
-                        Carrito
+                        <FontAwesomeIcon icon={faShoppingCart} style={{ fontSize: '20px' }} /> 
                       </NavLink>
                     </Badge>
                   </li>

@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className='footer'>
             <h4 className='text-center'>
-                Todos los derechos reservados &copy; Albán Richard - Ipiales Carlos - Lazo Ricardo 
+                Todos los derechos reservados &copy; Albán Richard - Lazo Ricardo - Nasimba Jorge - Zurita Vanessa
             </h4>
             <p className='text-center mt-3'>
                 <Link to="/about">Sobre Nosotros</Link>

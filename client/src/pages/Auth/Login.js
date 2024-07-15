@@ -5,6 +5,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 import "../../styles/AuthStyles.css";
 import { useAuth } from "../../context/auth";
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,7 +14,6 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // form function
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -38,20 +38,19 @@ const Login = () => {
       toast.error("Usuario no encontrado");
     }
   };
+
   return (
-    <Layout title="Register - Ecommer App">
-      <div className="form-container ">
+    <Layout title="Login - Ecommerce App">
+      <div className="form-container">
         <form onSubmit={handleSubmit}>
           <h4 className="title">LOGIN FORM</h4>
-
           <div className="mb-3">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Ingresa tu Email "
+              placeholder="Ingresa tu Email"
               required
             />
           </div>
@@ -61,26 +60,21 @@ const Login = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               className="form-control"
-              id="exampleInputPassword1"
               placeholder="Ingrese la contraseña"
               required
             />
           </div>
-
-          <div className="mb-3">
+          <div className="mb-3 forgot-password">
             <button
               type="button"
-              className="btn btn-primary"
-              onClick={() => {
-                navigate("/forgot-password");
-              }}
+              className="btn btn-secondary forgot-btn"
+              onClick={() => navigate("/forgot-password")}
             >
-              Has olvidado tu contraseña
+              ¿Olvidaste tu contraseña?
             </button>
           </div>
-
           <button type="submit" className="btn btn-primary">
-            Iniciar Seccion
+            Iniciar Sesión
           </button>
         </form>
       </div>
